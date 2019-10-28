@@ -10,8 +10,8 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
-  //var crypto = req.body.crypto;
-  //var fiat = req.body.fiat;
+  var crypto = req.body.crypto;
+  var fiat = req.body.fiat;
   request("https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD", function(error,response, body){
     var data = JSON.parse(body);
     var price = data.last;
